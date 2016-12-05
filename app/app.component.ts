@@ -3,9 +3,8 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'my-app',
   template: `
-  <h1>My First Angular App</h1>
-  <courses></courses>
-  <authors></authors>
+  <h1>Display Data and Event Handling</h1>
+  <propertyBind></propertyBind>
   `
 })
 export class AppComponent { }
