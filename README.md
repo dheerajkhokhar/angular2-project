@@ -2,26 +2,26 @@
 
 Angular Bindings:
 
-Interpolation
-{{ title }}
+Interpolation<br/>
+{{ title }}<br/><br/>
 
-Property binding
-[src]=“imageUrl”  
-bind-src=“imageUrl”
+Property binding<br/>
+[src]=“imageUrl” <br/> 
+bind-src=“imageUrl”<br/><br/>
 
-Class binding
-[class.active]=“isActive”
-class="btn btn-danger" [ngClass]="'className'">Submit
+Class binding<br/>
+[class.active]=“isActive”<br/>
+class="btn btn-danger" [ngClass]="'className'">Submit<br/><br/>
 
-Style binding
-[style.backgroundColor]=“isActive ? ‘blue’ : ‘gray’”
+Style binding<br/>
+[style.backgroundColor]=“isActive ? ‘blue’ : ‘gray’”<br/><br/>
 
-EWent binding
-(click)=“onClick($event)” 
-on-click=“onClick($event)”
+Event binding<br/>
+(click)=“onClick($event)” <br/>
+on-click=“onClick($event)”<br/><br/>
 
 Twoway binding
-type="text" [value]="title" (input)="title = $event.target.value"
-import 'FormsModule' from '@angular/forms' when you are using [(ngModel)] or bindon-ngModel as it is not a part of @angular/core.
-type=“text” [(ngModel)]=“firstName”
-type=“text” bindon-ngModel=“firstName”
+type="text" [value]="title" (input)="title = $event.target.value"<br/>
+import 'FormsModule' from '@angular/forms' when you are using [(ngModel)] or bindon-ngModel as it is not a part of @angular/core.<br/>
+type=“text” [(ngModel)]=“firstName”<br/>
+type=“text” bindon-ngModel=“firstName”<br/>
