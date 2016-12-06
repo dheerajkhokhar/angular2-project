@@ -11,15 +11,31 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var AppComponent = (function () {
     function AppComponent() {
+        this.post = {
+            title: "Title",
+            isFavorite: true,
+            isHeart: false,
+            heartCount: 10,
+            myVote: 0,
+            totalVotes: 10
+        };
     }
+    AppComponent.prototype.onFavoriteChange = function ($event) {
+        console.log($event);
+    };
+    AppComponent.prototype.onMyVote = function ($event) {
+        console.log($event);
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n  <h1>Display Data and Event Handling</h1>\n  <propertyBind></propertyBind>\n  "
+            template: "\n  <h1>Reuseable Component</h1>\n  <h2>Vote</h2>\n  <voters [myVote]=\"post.myVote\" [totalVotes]=\"post.totalVotes\" (vote)=\"onMyVote($event)\"></voters><br/>\n  <h2>Pre-Select</h2>\n  <favorite [is-favorite]=\"post.isFavorite\" (favoriteChange)=\"onFavoriteChange($event)\"></favorite><br/>\n  <h2>Input and Output example</h2>\n  <heart [is-heart]=\"post.isHeart\" [heart-count]=\"post.heartCount\"></heart>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
     return AppComponent;
 }());
 exports.AppComponent = AppComponent;
+// <favorite [is-favorite]="post.isFavorite" (favoriteChange)="onFavoriteChange($event)"></favorite>
+//   <heart [is-heart]="post.isHeart" [heart-count]="post.heartCount"></heart> 
 //# sourceMappingURL=app.component.js.map

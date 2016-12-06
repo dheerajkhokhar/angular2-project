@@ -12,7 +12,9 @@ var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var app_component_1 = require('./app.component');
-var propertyBinding_component_1 = require('./propertyBinding.component');
+var favorite_component_1 = require('./favorite.component');
+var twitterHeart_component_1 = require('./twitterHeart.component');
+var voter_component_1 = require('./voter.component');
 var AppModule = (function () {
     function AppModule() {
         console.log("Main", performance.now());
@@ -20,7 +22,7 @@ var AppModule = (function () {
     AppModule = __decorate([
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
-            declarations: [app_component_1.AppComponent, propertyBinding_component_1.PropertyBindComponent],
+            declarations: [app_component_1.AppComponent, favorite_component_1.FavoriteComponent, twitterHeart_component_1.TwitterHeart, voter_component_1.VoterComponent],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

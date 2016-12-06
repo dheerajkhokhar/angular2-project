@@ -1,0 +1,7 @@
+<div>
+    <i class="glyphicon glyphicon-menu-up" [ngClass]="{'voted': myVote == 1}" (click)=voting(1)></i><br/>
+    <span>{{totalVotes}}</span><br/>
+    <i class="glyphicon glyphicon-menu-down" [ngClass]="{'voted': myVote == -1}" (click)=voting(-1)></i>
+</div>
+
+
