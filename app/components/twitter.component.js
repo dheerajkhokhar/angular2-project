@@ -9,17 +9,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
+var twitter_service_1 = require('./../services/twitter.service');
+var TwitterComponent = (function () {
+    function TwitterComponent(twitterService) {
+        this.twitterService = twitterService;
+        this.twitterList = twitterService.getAllUsers();
     }
-    AppComponent = __decorate([
+    TwitterComponent.prototype.changePrint = function (data) {
+        console.log(data);
+        console.log(this.twitterList);
+    };
+    TwitterComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            template: "\n  <h1>Twitter example using angular2</h1><hr/>\n  <twitter></twitter>\n  "
+            selector: 'twitter',
+            templateUrl: './app/templates/twitter.template.html'
         }), 
-        __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+        __metadata('design:paramtypes', [twitter_service_1.TwitterService])
+    ], TwitterComponent);
+    return TwitterComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.TwitterComponent = TwitterComponent;
+//# sourceMappingURL=twitter.component.js.map
