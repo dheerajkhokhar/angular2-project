@@ -9,22 +9,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var SummaryPipe = (function () {
-    function SummaryPipe() {
+var ContactFormComponent = (function () {
+    function ContactFormComponent() {
     }
-    SummaryPipe.prototype.transform = function (value, maxWords) {
-        var limit = (maxWords) ? maxWords : 50;
-        if (value) {
-            return value.substring(0, limit) + "...";
-        }
+    ContactFormComponent.prototype.ngOnInit = function () {
+        this.user = {
+            name: '',
+            address: {
+                street: '',
+                postcode: '8000'
+            }
+        };
     };
-    SummaryPipe = __decorate([
-        core_1.Pipe({
-            name: 'summary'
+    ContactFormComponent.prototype.save = function (model, isValid, f) {
+        //console.log(model, isValid);
+        console.log(f);
+    };
+    ContactFormComponent.prototype.log = function (x) {
+        console.log(x);
+    };
+    ContactFormComponent = __decorate([
+        core_1.Component({
+            selector: 'contact-form',
+            templateUrl: 'app/contact-form.template.html'
         }), 
         __metadata('design:paramtypes', [])
-    ], SummaryPipe);
-    return SummaryPipe;
+    ], ContactFormComponent);
+    return ContactFormComponent;
 }());
-exports.SummaryPipe = SummaryPipe;
-//# sourceMappingURL=summary.pipe.js.map
+exports.ContactFormComponent = ContactFormComponent;
+//# sourceMappingURL=contact-form.component.js.map

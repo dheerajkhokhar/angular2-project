@@ -10,23 +10,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
+var forms_1 = require('@angular/forms');
 var app_component_1 = require('./app.component');
-var courses_component_1 = require('./courses.component');
-var authors_component_1 = require('./authors.component');
-var course_service_1 = require('./course.service');
-var author_service_1 = require('./author.service');
-var auto_grow_directive_1 = require('./auto-grow.directive');
-var summary_pipe_1 = require('./summary.pipe');
+var contact_form_component_1 = require('./contact-form.component');
+var reactive_form_component_1 = require('./reactive-form.component');
 var AppModule = (function () {
     function AppModule() {
         console.log("Main", performance.now());
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule],
-            declarations: [app_component_1.AppComponent, courses_component_1.CoursesComponent, authors_component_1.AuthorsComponent, auto_grow_directive_1.AutoGrowDirective, summary_pipe_1.SummaryPipe],
-            bootstrap: [app_component_1.AppComponent],
-            providers: [course_service_1.CourseService, author_service_1.AuhtorService],
+            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, forms_1.ReactiveFormsModule],
+            declarations: [app_component_1.AppComponent, contact_form_component_1.ContactFormComponent, reactive_form_component_1.ReactiveFormComponent],
+            bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])
     ], AppModule);

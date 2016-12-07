@@ -15,7 +15,7 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n  <h1>My First Angular App</h1>\n  <courses></courses>\n  <authors></authors>\n  "
+            template: "<contact-form></contact-form><model-form></model-form>"
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

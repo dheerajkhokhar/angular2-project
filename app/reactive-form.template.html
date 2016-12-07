@@ -1,0 +1,46 @@
+<div class="container">
+  <h1>Model Driven Form</h1>
+  <form [formGroup]="registerForm" (ngSubmit)="save(registerForm)">
+    <div class="form-group">
+      <label>Firstname:</label>
+      <input type="text" class="form-control" formControlName="firstname">
+
+      <div *ngIf="registerForm.controls.firstname.pending">Checking for uniqueness...</div>
+
+      <div *ngIf="registerForm.controls.firstname.touched && registerForm.controls.firstname.errors">
+        <div *ngIf="registerForm.controls.firstname.errors.required" 
+            class="alert alert-danger">required</div>
+
+        <div *ngIf="registerForm.controls.firstname.errors.cannotContainSpace" 
+            class="alert alert-danger">cannot Contain Space</div>
+
+        <div *ngIf="registerForm.controls.firstname.errors.shouldBeUnique" 
+            class="alert alert-danger">should Be Unique</div>
+        <div *ngIf="registerForm.controls.firstname.errors.invalidValue" 
+            class="alert alert-danger">invalid Value</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Lastname:</label>
+      <input type="text" class="form-control" formControlName="lastname">
+    </div>
+
+    <fieldset formGroupName="address">
+      <div class="form-group">
+        <label>Street:</label>
+        <input type="text" class="form-control" formControlName="street">
+      </div>
+
+      <div class="form-group">
+        <label>Zip:</label>
+        <input type="text" class="form-control" formControlName="zip">
+      </div>
+
+      <div class="form-group">
+        <label>City:</label>
+        <input type="text" class="form-control" formControlName="city">
+      </div>
+    </fieldset>
+    <button type="submit">Submit</button>
+  </form>
+</div>
