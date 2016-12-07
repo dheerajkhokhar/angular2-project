@@ -14,12 +14,16 @@ var AuthorsComponent = (function () {
     function AuthorsComponent(authorService) {
         this.authorService = authorService;
         this.title = "Title for the auhtors page";
+        this.post = {
+            title: "Key Bindings for Visual Studio Code",
+            body: "\n        Visual Studio Code lets you perform most tasks directly from the keyboard. \n        This page lists out the default bindings (keyboard shortcuts) and describes how you can update them.\n        If you visit this page on a Mac, you will see the key bindings for the Mac. \n        If you visit using Windows or Linux, you will see the keys for that platform. \n        If you need the key binding for another platform, hover your mouse over the key you are interested in.\n      "
+        };
         this.authors = this.authorService.getAuthors();
     }
     AuthorsComponent = __decorate([
         core_1.Component({
             selector: 'authors',
-            template: "\n    <h2>Authors</h2>\n    {{title}}\n    <ul>\n        <li *ngFor=\"let author of authors\">\n            {{author}}\n        </li>\n    </ul>\n    "
+            template: "\n    <h2>Authors</h2>\n    {{title}}\n    <ul>\n        <li *ngFor=\"let author of authors, let i = index\">\n          {{i+1}} - {{author}}\n        </li>\n    </ul><br/>\n    <h2>Custom Pipes</h2>\n    {{post.title}}\n    <br/>\n    {{post.body | summary:100}}\n    "
         }), 
         __metadata('design:paramtypes', [author_service_1.AuhtorService])
     ], AuthorsComponent);
