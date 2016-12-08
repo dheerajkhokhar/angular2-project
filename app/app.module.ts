@@ -1,21 +1,30 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent }   from './app.component';
-import { CoursesComponent } from  './courses.component';
-import { AuthorsComponent } from  './authors.component';
-import { CourseService } from './course.service';
-import { AuhtorService } from './author.service';
-import { AutoGrowDirective } from './auto-grow.directive';
-import { SummaryPipe } from './summary.pipe';
+import { HttpModule,JsonpModule } from '@angular/http';
+import {PostService} from './services/post.service'
 
 @NgModule({
-  imports:      [ BrowserModule ],
-  declarations: [ AppComponent, CoursesComponent, AuthorsComponent, AutoGrowDirective, SummaryPipe ],
+  imports:      [ BrowserModule, HttpModule, JsonpModule ],
+  declarations: [ AppComponent ],
   bootstrap:    [ AppComponent ],
-  providers:    [ CourseService, AuhtorService ],
+  providers:    [PostService]
 })
 export class AppModule {
   constructor(){
         console.log("Main",performance.now());
     }
  }
+
+//*********************************************************************************************
+
+// To connect to a server import HttpModule and JsonpModule from @angular/http 
+// get()    : get data
+// post()   : create data
+// put()    : update data with complete representation 
+// patch()  : update only part of resource
+// delete() : delete resource
+// head()   : getting meta data about the resource (use if you want to check existence of resource)
+
+//*********************************************************************************************
+ 

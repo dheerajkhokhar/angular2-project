@@ -11,26 +11,31 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var app_component_1 = require('./app.component');
-var courses_component_1 = require('./courses.component');
-var authors_component_1 = require('./authors.component');
-var course_service_1 = require('./course.service');
-var author_service_1 = require('./author.service');
-var auto_grow_directive_1 = require('./auto-grow.directive');
-var summary_pipe_1 = require('./summary.pipe');
+var http_1 = require('@angular/http');
+var post_service_1 = require('./services/post.service');
 var AppModule = (function () {
     function AppModule() {
         console.log("Main", performance.now());
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule],
-            declarations: [app_component_1.AppComponent, courses_component_1.CoursesComponent, authors_component_1.AuthorsComponent, auto_grow_directive_1.AutoGrowDirective, summary_pipe_1.SummaryPipe],
+            imports: [platform_browser_1.BrowserModule, http_1.HttpModule, http_1.JsonpModule],
+            declarations: [app_component_1.AppComponent],
             bootstrap: [app_component_1.AppComponent],
-            providers: [course_service_1.CourseService, author_service_1.AuhtorService],
+            providers: [post_service_1.PostService]
         }), 
         __metadata('design:paramtypes', [])
     ], AppModule);
     return AppModule;
 }());
 exports.AppModule = AppModule;
+//*********************************************************************************************
+// To connect to a server import HttpModule and JsonpModule from @angular/http 
+// get()    : get data
+// post()   : create data
+// put()    : update data with complete representation 
+// patch()  : update only part of resource
+// delete() : delete resource
+// head()   : getting meta data about the resource (use if you want to check existence of resource)
+//*********************************************************************************************
 //# sourceMappingURL=app.module.js.map
