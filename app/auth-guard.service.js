@@ -10,21 +10,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var AppComponent = (function () {
-    function AppComponent(_router) {
+var auth_service_1 = require('./auth.service');
+var AuthGuard = (function () {
+    function AuthGuard(_authService, _router) {
+        this._authService = _authService;
         this._router = _router;
     }
-    AppComponent.prototype.onClick = function () {
-        this._router.navigate(['photos', 2]);
+    AuthGuard.prototype.canActivate = function () {
+        if (this._authService.isLoggedIn) {
+            return true;
+        }
+        this._router.navigate(['login']);
+        return false;
     };
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'my-app',
-            template: "\n  <ul>\n  <li><a routerLink=\"\">Home</a></li>\n  <li><a routerLink=\"messages\">Messages</a></li>\n  <li><a routerLink=\"photos\">Photos</a></li>\n  <li><a [routerLink]=\"['photos',1]\">Photos Detils</a></li>\n  </ul>\n  <button (click)=\"onClick()\"> Click me </button>\n  <router-outlet></router-outlet>\n"
-        }), 
-        __metadata('design:paramtypes', [router_1.Router])
-    ], AppComponent);
-    return AppComponent;
+    AuthGuard = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [auth_service_1.AuthService, router_1.Router])
+    ], AuthGuard);
+    return AuthGuard;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.AuthGuard = AuthGuard;
+//# sourceMappingURL=auth-guard.service.js.map

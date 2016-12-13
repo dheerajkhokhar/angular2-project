@@ -1,30 +1,33 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppComponent }   from './app.component';
-import { HttpModule,JsonpModule } from '@angular/http';
-import {PostService} from './services/post.service'
+
+import { AppComponent }  from './app.component';
+import { HomeComponent } from './home.component';
+import { NotFoundComponent } from './not-found.component';
+
+import { MessagesModule } from './messages/messages.module'; 
+import { PhotosModule } from './photos/photos.module';
+
+import {routing} from './app.routing';
+import {photosRouting} from './photos/photos.routing';
+import { AuthGuard } from './auth-guard.service';
+import { AuthService } from './auth.service';
+import { PreventUnsavedChangedGuard } from './prevent-unsaved-chnages-guard.service';
 
 @NgModule({
-  imports:      [ BrowserModule, HttpModule, JsonpModule ],
-  declarations: [ AppComponent ],
+  imports: [
+    BrowserModule,
+    MessagesModule,
+    PhotosModule,
+    photosRouting,
+    routing
+  ],
+  declarations: [ 
+    AppComponent,
+    HomeComponent,
+    NotFoundComponent
+  ],
   bootstrap:    [ AppComponent ],
-  providers:    [PostService]
+  providers:[AuthGuard, AuthService, PreventUnsavedChangedGuard]
 })
-export class AppModule {
-  constructor(){
-        console.log("Main",performance.now());
-    }
- }
-
-//*********************************************************************************************
-
-// To connect to a server import HttpModule and JsonpModule from @angular/http 
-// get()    : get data
-// post()   : create data
-// put()    : update data with complete representation 
-// patch()  : update only part of resource
-// delete() : delete resource
-// head()   : getting meta data about the resource (use if you want to check existence of resource)
-
-//*********************************************************************************************
- 
+export class AppModule { }

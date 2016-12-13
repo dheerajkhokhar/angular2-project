@@ -1,41 +1,22 @@
-import { Component ,OnInit } from '@angular/core';
-import {PostService} from './services/post.service';
-import 'rxjs/add/operator/debounceTime';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'my-app',
   template: `
-    <h1>Server Example</h1>
-    <div *ngIf="isLoading"><i class="fa fa-spinner fa-spin fa-3x"></i></div>
-    <div *ngIf="!isLoading">Data Loaded...</div>
-  `
+  <ul>
+  <li><a routerLink="">Home</a></li>
+  <li><a routerLink="messages">Messages</a></li>
+  <li><a routerLink="photos">Photos</a></li>
+  <li><a [routerLink]="['photos',1]">Photos Detils</a></li>
+  </ul>
+  <button (click)="onClick()"> Click me </button>
+  <router-outlet></router-outlet>
+`
 })
-export class AppComponent implements OnInit {
-  isLoading = true;
-  
-  constructor(private _postService : PostService){
+export class AppComponent {
+  constructor(private _router:Router){}
+  onClick(){
+    this._router.navigate(['photos',2]);
   }
-
-  ngOnInit(){
-    this._postService.createPost({userId:1,title:"a",body:"test"}).subscribe((posts) => console.log(posts));
-
-    // Observable
-    // this._postService.getPosts().subscribe((posts) => {
-    //   this.isLoading = false;
-    //   console.log(posts[0].id)
-    // });
-
-    // Promise
-    this._postService.getPosts().then((posts) => {
-      this.isLoading = false;
-      console.log(posts[0].id)
-    });
-  }
- }
-
-//***********************************************************************************************************
-
-// In case of observable use subscribe
-// In case of promise use then
-
-//***********************************************************************************************************
+}

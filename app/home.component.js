@@ -9,22 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var AppComponent = (function () {
-    function AppComponent(_router) {
-        this._router = _router;
+var auth_service_1 = require('./auth.service');
+var HomeComponent = (function () {
+    function HomeComponent(authService) {
+        authService.login("dheeraj", "123");
     }
-    AppComponent.prototype.onClick = function () {
-        this._router.navigate(['photos', 2]);
-    };
-    AppComponent = __decorate([
+    HomeComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            template: "\n  <ul>\n  <li><a routerLink=\"\">Home</a></li>\n  <li><a routerLink=\"messages\">Messages</a></li>\n  <li><a routerLink=\"photos\">Photos</a></li>\n  <li><a [routerLink]=\"['photos',1]\">Photos Detils</a></li>\n  </ul>\n  <button (click)=\"onClick()\"> Click me </button>\n  <router-outlet></router-outlet>\n"
+            template: "<h1>Home Page</h1>\n  "
         }), 
-        __metadata('design:paramtypes', [router_1.Router])
-    ], AppComponent);
-    return AppComponent;
+        __metadata('design:paramtypes', [auth_service_1.AuthService])
+    ], HomeComponent);
+    return HomeComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.HomeComponent = HomeComponent;
+//# sourceMappingURL=home.component.js.map

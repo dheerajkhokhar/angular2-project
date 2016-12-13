@@ -10,21 +10,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var AppComponent = (function () {
-    function AppComponent(_router) {
-        this._router = _router;
+var PhotoDetailsComponent = (function () {
+    function PhotoDetailsComponent(_route) {
+        this._route = _route;
     }
-    AppComponent.prototype.onClick = function () {
-        this._router.navigate(['photos', 2]);
+    PhotoDetailsComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.subscription = this._route.params.subscribe(function (params) {
+            _this.id = +params["id"];
+        });
+        //this.id = this._route.snapshot.params["id"];
     };
-    AppComponent = __decorate([
+    PhotoDetailsComponent.prototype.ngOnDestroy = function () {
+        this.subscription.unsubscribe();
+    };
+    PhotoDetailsComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            template: "\n  <ul>\n  <li><a routerLink=\"\">Home</a></li>\n  <li><a routerLink=\"messages\">Messages</a></li>\n  <li><a routerLink=\"photos\">Photos</a></li>\n  <li><a [routerLink]=\"['photos',1]\">Photos Detils</a></li>\n  </ul>\n  <button (click)=\"onClick()\"> Click me </button>\n  <router-outlet></router-outlet>\n"
+            template: "<h1>Photo Details {{id}}</h1>\n    "
         }), 
-        __metadata('design:paramtypes', [router_1.Router])
-    ], AppComponent);
-    return AppComponent;
+        __metadata('design:paramtypes', [router_1.ActivatedRoute])
+    ], PhotoDetailsComponent);
+    return PhotoDetailsComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.PhotoDetailsComponent = PhotoDetailsComponent;
+//# sourceMappingURL=photo-details.component.js.map

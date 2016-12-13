@@ -11,31 +11,38 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var app_component_1 = require('./app.component');
-var http_1 = require('@angular/http');
-var post_service_1 = require('./services/post.service');
+var home_component_1 = require('./home.component');
+var not_found_component_1 = require('./not-found.component');
+var messages_module_1 = require('./messages/messages.module');
+var photos_module_1 = require('./photos/photos.module');
+var app_routing_1 = require('./app.routing');
+var photos_routing_1 = require('./photos/photos.routing');
+var auth_guard_service_1 = require('./auth-guard.service');
+var auth_service_1 = require('./auth.service');
+var prevent_unsaved_chnages_guard_service_1 = require('./prevent-unsaved-chnages-guard.service');
 var AppModule = (function () {
     function AppModule() {
-        console.log("Main", performance.now());
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, http_1.HttpModule, http_1.JsonpModule],
-            declarations: [app_component_1.AppComponent],
+            imports: [
+                platform_browser_1.BrowserModule,
+                messages_module_1.MessagesModule,
+                photos_module_1.PhotosModule,
+                photos_routing_1.photosRouting,
+                app_routing_1.routing
+            ],
+            declarations: [
+                app_component_1.AppComponent,
+                home_component_1.HomeComponent,
+                not_found_component_1.NotFoundComponent
+            ],
             bootstrap: [app_component_1.AppComponent],
-            providers: [post_service_1.PostService]
+            providers: [auth_guard_service_1.AuthGuard, auth_service_1.AuthService, prevent_unsaved_chnages_guard_service_1.PreventUnsavedChangedGuard]
         }), 
         __metadata('design:paramtypes', [])
     ], AppModule);
     return AppModule;
 }());
 exports.AppModule = AppModule;
-//*********************************************************************************************
-// To connect to a server import HttpModule and JsonpModule from @angular/http 
-// get()    : get data
-// post()   : create data
-// put()    : update data with complete representation 
-// patch()  : update only part of resource
-// delete() : delete resource
-// head()   : getting meta data about the resource (use if you want to check existence of resource)
-//*********************************************************************************************
 //# sourceMappingURL=app.module.js.map
