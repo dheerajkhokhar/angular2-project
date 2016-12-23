@@ -9,21 +9,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var messages_service_1 = require('./messages.service');
-var MessagesComponent = (function () {
-    function MessagesComponent(service) {
+var survey_service_1 = require('./survey.service');
+var SurveyComponent = (function () {
+    function SurveyComponent(service) {
         this.title = "New Message";
-        this.messages = service.getMessages();
+        this.surveyList = service.getSurveys();
     }
-    MessagesComponent = __decorate([
+    SurveyComponent.prototype.gotoSurvey = function (survey) {
+        console.log(survey);
+    };
+    SurveyComponent = __decorate([
         core_1.Component({
-            selector: 'messages',
-            template: "<h1>Messages</h1>\n    <input [(ngModel)]=\"title\">\n    <ul>\n        <li *ngFor=\"let m of messages\">{{ m }}</li>\n    </ul>\n    "
+            selector: 'survey',
+            template: "<h1>Survey List</h1>\n    <ul>\n        <li *ngFor=\"let survey of surveyList\" (click)=\"gotoSurvey(survey)\" class=\"surveyList\">{{ survey.notificationAttributes.title }}</li>\n    </ul>\n    ",
+            styles: [".surveyList { cursor:pointer }"]
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof messages_service_1.MessagesService !== 'undefined' && messages_service_1.MessagesService) === 'function' && _a) || Object])
-    ], MessagesComponent);
-    return MessagesComponent;
-    var _a;
+        __metadata('design:paramtypes', [survey_service_1.SurveyService])
+    ], SurveyComponent);
+    return SurveyComponent;
 }());
-exports.MessagesComponent = MessagesComponent;
-//# sourceMappingURL=messages.component.js.map
+exports.SurveyComponent = SurveyComponent;
+//# sourceMappingURL=survey.component.js.map

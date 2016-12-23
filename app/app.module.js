@@ -13,10 +13,8 @@ var platform_browser_1 = require('@angular/platform-browser');
 var app_component_1 = require('./app.component');
 var home_component_1 = require('./home.component');
 var not_found_component_1 = require('./not-found.component');
-var messages_module_1 = require('./messages/messages.module');
-var photos_module_1 = require('./photos/photos.module');
+var survey_module_1 = require('./survey/survey.module');
 var app_routing_1 = require('./app.routing');
-var photos_routing_1 = require('./photos/photos.routing');
 var auth_guard_service_1 = require('./auth-guard.service');
 var auth_service_1 = require('./auth.service');
 var prevent_unsaved_chnages_guard_service_1 = require('./prevent-unsaved-chnages-guard.service');
@@ -27,9 +25,7 @@ var AppModule = (function () {
         core_1.NgModule({
             imports: [
                 platform_browser_1.BrowserModule,
-                messages_module_1.MessagesModule,
-                photos_module_1.PhotosModule,
-                photos_routing_1.photosRouting,
+                survey_module_1.SurveyModule,
                 app_routing_1.routing
             ],
             declarations: [

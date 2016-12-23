@@ -4,12 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent }  from './app.component';
 import { HomeComponent } from './home.component';
 import { NotFoundComponent } from './not-found.component';
-
-import { MessagesModule } from './messages/messages.module'; 
-import { PhotosModule } from './photos/photos.module';
-
-import {routing} from './app.routing';
-import {photosRouting} from './photos/photos.routing';
+import { SurveyModule } from './survey/survey.module'; 
+import { routing } from './app.routing';
 import { AuthGuard } from './auth-guard.service';
 import { AuthService } from './auth.service';
 import { PreventUnsavedChangedGuard } from './prevent-unsaved-chnages-guard.service';
@@ -17,9 +13,7 @@ import { PreventUnsavedChangedGuard } from './prevent-unsaved-chnages-guard.serv
 @NgModule({
   imports: [
     BrowserModule,
-    MessagesModule,
-    PhotosModule,
-    photosRouting,
+    SurveyModule,
     routing
   ],
   declarations: [ 

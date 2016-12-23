@@ -4,8 +4,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule }   from '@angular/forms';
 
 
-import { MessagesService }  from './messages.service';
-import { MessagesComponent } from './messages.component';
+import { SurveyService }  from './survey.service';
+import { SurveyComponent } from './survey.component';
 
 @NgModule({
     imports: [
@@ -13,15 +13,15 @@ import { MessagesComponent } from './messages.component';
         FormsModule
     ],
     declarations: [
-        MessagesComponent
+        SurveyComponent
     ],
     exports: [
-        MessagesComponent
+        SurveyComponent
     ],
     providers: [
-        MessagesService
+        SurveyService
     ]
 })
-export class MessagesModule {
+export class SurveyModule {
     
 }

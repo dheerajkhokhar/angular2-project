@@ -1,7 +1,7 @@
 import {Router, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home.component';
-import { MessagesComponent } from './messages/messages.component';
+import { SurveyComponent } from './survey/survey.component';
 import { NotFoundComponent } from './not-found.component';
 
 import { AuthGuard } from './auth-guard.service';
@@ -11,10 +11,8 @@ export const routing =
 RouterModule.forRoot([
   {path:'',component: HomeComponent},
   {
-    path:'messages',
-    component: MessagesComponent,
-    canActivate:[ AuthGuard ],
-    canDeactivate:[ PreventUnsavedChangedGuard ]
+    path:'survey',
+    component: SurveyComponent
   },
   {path:'**',component: NotFoundComponent}
 ])
