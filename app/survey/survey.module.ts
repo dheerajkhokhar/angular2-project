@@ -6,6 +6,7 @@ import { FormsModule }   from '@angular/forms';
 
 import { SurveyService }  from './survey.service';
 import { SurveyComponent } from './survey.component';
+import { IndividualSurvey } from './individualSurvey.component';
 
 @NgModule({
     imports: [
@@ -13,10 +14,12 @@ import { SurveyComponent } from './survey.component';
         FormsModule
     ],
     declarations: [
-        SurveyComponent
+        SurveyComponent,
+        IndividualSurvey
     ],
     exports: [
-        SurveyComponent
+        SurveyComponent,
+        IndividualSurvey
     ],
     providers: [
         SurveyService

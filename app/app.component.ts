@@ -6,7 +6,7 @@ import { Router } from '@angular/router'
   template: `
   <ul>
   <li><a routerLink="">Home</a></li>
-  <li><a routerLink="survey">Survey</a></li>
+  <li><a routerLink="surveylist">Survey</a></li>
   </ul>
   <button (click)="onClick()"> Survey </button>
   <router-outlet></router-outlet>
@@ -15,6 +15,6 @@ import { Router } from '@angular/router'
 export class AppComponent {
   constructor(private _router:Router){}
   onClick(){
-    this._router.navigate(['survey']);
+    this._router.navigate(['surveylist']);
   }
 }

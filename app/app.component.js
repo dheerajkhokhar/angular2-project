@@ -15,12 +15,12 @@ var AppComponent = (function () {
         this._router = _router;
     }
     AppComponent.prototype.onClick = function () {
-        this._router.navigate(['survey']);
+        this._router.navigate(['surveylist']);
     };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n  <ul>\n  <li><a routerLink=\"\">Home</a></li>\n  <li><a routerLink=\"survey\">Survey</a></li>\n  </ul>\n  <button (click)=\"onClick()\"> Survey </button>\n  <router-outlet></router-outlet>\n"
+            template: "\n  <ul>\n  <li><a routerLink=\"\">Home</a></li>\n  <li><a routerLink=\"surveylist\">Survey</a></li>\n  </ul>\n  <button (click)=\"onClick()\"> Survey </button>\n  <router-outlet></router-outlet>\n"
         }), 
         __metadata('design:paramtypes', [router_1.Router])
     ], AppComponent);

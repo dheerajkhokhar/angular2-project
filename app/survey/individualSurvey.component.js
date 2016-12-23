@@ -9,32 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var common_1 = require('@angular/common');
-var forms_1 = require('@angular/forms');
-var messages_service_1 = require('./messages.service');
-var messages_component_1 = require('./messages.component');
-var MessagesModule = (function () {
-    function MessagesModule() {
+var IndividualSurvey = (function () {
+    function IndividualSurvey() {
     }
-    MessagesModule = __decorate([
-        core_1.NgModule({
-            imports: [
-                common_1.CommonModule,
-                forms_1.FormsModule
-            ],
-            declarations: [
-                messages_component_1.MessagesComponent
-            ],
-            exports: [
-                messages_component_1.MessagesComponent
-            ],
-            providers: [
-                messages_service_1.MessagesService
-            ]
+    IndividualSurvey = __decorate([
+        core_1.Component({
+            selector: 'survey',
+            template: "<h1>d</h1>",
+            styles: [".surveyList { cursor:pointer }"]
         }), 
         __metadata('design:paramtypes', [])
-    ], MessagesModule);
-    return MessagesModule;
+    ], IndividualSurvey);
+    return IndividualSurvey;
 }());
-exports.MessagesModule = MessagesModule;
-//# sourceMappingURL=messages.module.js.map
+exports.IndividualSurvey = IndividualSurvey;
+//# sourceMappingURL=individualSurvey.component.js.map

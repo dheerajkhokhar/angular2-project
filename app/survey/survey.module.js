@@ -13,6 +13,7 @@ var common_1 = require('@angular/common');
 var forms_1 = require('@angular/forms');
 var survey_service_1 = require('./survey.service');
 var survey_component_1 = require('./survey.component');
+var individualSurvey_component_1 = require('./individualSurvey.component');
 var SurveyModule = (function () {
     function SurveyModule() {
     }
@@ -23,10 +24,12 @@ var SurveyModule = (function () {
                 forms_1.FormsModule
             ],
             declarations: [
-                survey_component_1.SurveyComponent
+                survey_component_1.SurveyComponent,
+                individualSurvey_component_1.IndividualSurvey
             ],
             exports: [
-                survey_component_1.SurveyComponent
+                survey_component_1.SurveyComponent,
+                individualSurvey_component_1.IndividualSurvey
             ],
             providers: [
                 survey_service_1.SurveyService
